@@ -1,6 +1,6 @@
 import time
 
-from Adafruit-Raspberry-Pi-Python-Code.Adafruit_PWM_Servo_Driver import PWM
+from Adafruit_PWM_Servo_Driver import PWM
 
 from robot import Shoulder, Elbow, Wrist, Arm, Hexapod
 
@@ -23,3 +23,4 @@ while True:
 
     hexapod.backward()
     time.sleep(sleep_time)
+
