@@ -24,18 +24,18 @@ class Joint(object):
 
 
 class Shoulder(Joint):
-    min_rotation = 10
-    max_rotation = 80
+    min_rotation = 250
+    max_rotation = 400
 
 
 class Elbow(Joint):
-    min_rotation = 0
-    max_rotation = 100
+    min_rotation = 250
+    max_rotation = 400
 
 
 class Wrist(Joint):
-    min_rotation = 0
-    max_rotation = 100
+    min_rotation = 250
+    max_rotation = 400
 
 
 class Arm(object):
