@@ -1,3 +1,4 @@
+import time
 
 
 class Joint(object):
@@ -76,19 +77,29 @@ class Arm(object):
         self.elbow = elbow
         self.wrist = wrist
 
-    def forward(self):
-        self.shoulder.move_min()
+    def sleep(self):
+        self.shoulder.sleep()
+        self.elbow.sleep()
+        self.wrist.sleep()
+
     def wake_up(self):
         self.shoulder.wake_up()
         self.elbow.wake_up()
         self.wrist.wake_up()
+
+    def up(self):
+        self.elbow.move_min()
+        self.wrist.move_max()
+
+    def down(self):
         self.elbow.move_max()
         self.wrist.move_min()
 
+    def forward(self):
+        self.shoulder.move_min()
+
     def backward(self):
         self.shoulder.move_max()
-        self.elbow.move_min()
-        self.wrist.move_max()
 
 
 class Hexapod(object):
@@ -128,10 +139,30 @@ class Hexapod(object):
         self.arm_1.wake_up()
 
     def forward(self):
+        self.arm_1.up()
+        time.sleep(self.sleep_time)
+
         self.arm_1.forward()
+        time.sleep(self.sleep_time)
+
+        self.arm_1.down()
+        time.sleep(self.sleep_time)
+
+        self.arm_1.wake_up()
+        time.sleep(self.sleep_time)
 
     def backward(self):
+        self.arm_1.up()
+        time.sleep(self.sleep_time)
+
         self.arm_1.backward()
+        time.sleep(self.sleep_time)
+
+        self.arm_1.down()
+        time.sleep(self.sleep_time)
+
+        self.arm_1.wake_up()
+        time.sleep(self.sleep_time)
 
     def strafe_left(self):
         pass
