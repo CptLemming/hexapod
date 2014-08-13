@@ -19,6 +19,10 @@ class Joint(object):
     def move_min(self):
         self.pwm.setPWM(self.connector, 0, self.min_rotation)
 
+    def move_mid(self):
+        mid_rotation = ((self.max_rotation - self.min_rotation) / 2) + self.min_rotation
+        self.pwm.setPWM(self.connector, 0, mid_rotation)
+
     def move_max(self):
         self.pwm.setPWM(self.connector, 0, self.max_rotation)
 
