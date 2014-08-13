@@ -99,7 +99,18 @@ class Hexapod(object):
     arm_5 = None
     arm_6 = None
 
-    def __init__(self, arm_1, arm_2, arm_3, arm_4, arm_5, arm_6):
+    sleep_time = 2
+
+    def __init__(self, arm_1, arm_2, arm_3, arm_4, arm_5, arm_6, sleep_time=None):
+        """
+        Hexapod skeleton
+        @type arm_1: Arm
+        @type arm_2: Arm
+        @type arm_3: Arm
+        @type arm_4: Arm
+        @type arm_5: Arm
+        @type arm_6: Arm
+        """
         self.arm_1 = arm_1
         self.arm_2 = arm_2
         self.arm_3 = arm_3
