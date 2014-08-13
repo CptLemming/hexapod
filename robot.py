@@ -26,20 +26,44 @@ class Joint(object):
     def move_max(self):
         self.pwm.setPWM(self.connector, 0, self.max_rotation)
 
+    def sleep(self):
+        raise NotImplementedError
+
+    def wake_up(self):
+        raise NotImplementedError
+
 
 class Shoulder(Joint):
     min_rotation = 250
     max_rotation = 400
+
+    def sleep(self):
+        self.move_mid()
+
+    def wake_up(self):
+        self.move_mid()
 
 
 class Elbow(Joint):
     min_rotation = 250
     max_rotation = 400
 
+    def sleep(self):
+        self.move_max()
+
+    def wake_up(self):
+        self.move_min()
+
 
 class Wrist(Joint):
     min_rotation = 250
     max_rotation = 400
+
+    def sleep(self):
+        self.move_min()
+
+    def wake_up(self):
+        self.move_max()
 
 
 class Arm(object):
@@ -54,6 +78,10 @@ class Arm(object):
 
     def forward(self):
         self.shoulder.move_min()
+    def wake_up(self):
+        self.shoulder.wake_up()
+        self.elbow.wake_up()
+        self.wrist.wake_up()
         self.elbow.move_max()
         self.wrist.move_min()
 
@@ -78,6 +106,15 @@ class Hexapod(object):
         self.arm_4 = arm_4
         self.arm_5 = arm_5
         self.arm_6 = arm_6
+
+        if sleep_time is not None:
+            self.sleep_time = sleep_time
+
+    def sleep(self):
+        self.arm_1.sleep()
+
+    def wake_up(self):
+        self.arm_1.wake_up()
 
     def forward(self):
         self.arm_1.forward()
