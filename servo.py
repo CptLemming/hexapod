@@ -1,9 +1,16 @@
 import time
+
+from Adafruit_PWM_Servo_Driver import PWM
+
 from robot import Shoulder, Elbow, Wrist, Arm, Hexapod
 
 
-left_pwm = 'PWM_ONE'
-right_pwm = 'PWM_TWO'
+left_pwm = PWM(0x40, debug=True)
+left_pwm.setPWMFreq(60)
+
+right_pwm = PWM(0x41, debug=True)
+right_pwm.setPWMFreq(60)
+
 
 shoulder_1 = Shoulder(left_pwm, 0)
 elbow_1 = Elbow(left_pwm, 1)
