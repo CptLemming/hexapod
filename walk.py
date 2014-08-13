@@ -5,7 +5,7 @@ from Adafruit_PWM_Servo_Driver import PWM
 from robot import Shoulder, Elbow, Wrist, Arm, Hexapod
 
 
-sleep_time = 2
+sleep_time = 5
 
 left_pwm = PWM(0x40, debug=True)
 left_pwm.setPWMFreq(60)
@@ -20,7 +20,3 @@ hexapod = Hexapod(arm_1, None, None, None, None, None)
 while True:
     hexapod.forward()
     time.sleep(sleep_time)
-
-    hexapod.backward()
-    time.sleep(sleep_time)
-
