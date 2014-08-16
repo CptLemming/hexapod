@@ -21,7 +21,10 @@ class Joint(object):
         self.pwm.setPWM(self.connector, 0, self.min_rotation)
 
     def move_mid(self):
-        mid_rotation = ((self.max_rotation - self.min_rotation) / 2) + self.min_rotation
+        if self.min_rotation > self.max_rotation:
+            mid_rotation = ((self.min_rotation - self.max_rotation) / 2) + self.max_rotation
+        else:
+            mid_rotation = ((self.max_rotation - self.min_rotation) / 2) + self.min_rotation
         self.pwm.setPWM(self.connector, 0, mid_rotation)
 
     def move_max(self):
@@ -39,10 +42,20 @@ class Shoulder(Joint):
     max_rotation = 400
 
     def sleep(self):
-        self.move_mid()
+        self.move_max()
 
     def wake_up(self):
         self.move_mid()
+
+
+class LeftShoulder(Shoulder):
+    min_rotation = 400
+    max_rotation = 250
+
+
+class RightShoulder(Shoulder):
+    min_rotation = 250
+    max_rotation = 400
 
 
 class Elbow(Joint):
@@ -56,6 +69,16 @@ class Elbow(Joint):
         self.move_min()
 
 
+class LeftElbow(Elbow):
+    min_rotation = 400
+    max_rotation = 250
+
+
+class RightElbow(Elbow):
+    max_rotation = 250
+    min_rotation = 400
+
+
 class Wrist(Joint):
     min_rotation = 250
     max_rotation = 400
@@ -65,6 +88,16 @@ class Wrist(Joint):
 
     def wake_up(self):
         self.move_max()
+
+
+class LeftWrist(Wrist):
+    min_rotation = 400
+    max_rotation = 250
+
+
+class RightWrist(Wrist):
+    min_rotation = 250
+    max_rotation = 400
 
 
 class Arm(object):
@@ -181,3 +214,4 @@ class Hexapod(object):
 
     def lower_body(self):
         pass
+
