@@ -9,10 +9,10 @@ from robot import LeftShoulder, RightShoulder, LeftElbow, RightElbow, LeftWrist,
 
 top = Tkinter.Tk()
 
-left_pwm = PWM(0x40, debug=True)
+left_pwm = PWM(0x40)
 left_pwm.setPWMFreq(60)
 
-right_pwm = PWM(0x41, debug=True)
+right_pwm = PWM(0x41)
 right_pwm.setPWMFreq(60)
 
 
@@ -61,12 +61,12 @@ def left_shoulder_max():
 def left_elbow_min():
     elbow_1.move_min()
     elbow_2.move_min()
-    eblow_3.move_min()
+    elbow_3.move_min()
 
 def left_elbow_max():
     elbow_1.move_max()
     elbow_2.move_max()
-    eblow_3.move_max()
+    elbow_3.move_max()
 
 def left_wrist_min():
     wrist_1.move_min()
@@ -91,12 +91,12 @@ def right_shoulder_max():
 def right_elbow_min():
     elbow_4.move_min()
     elbow_5.move_min()
-    eblow_6.move_min()
+    elbow_6.move_min()
 
 def right_elbow_max():
     elbow_4.move_max()
     elbow_5.move_max()
-    eblow_6.move_max()
+    elbow_6.move_max()
 
 def right_wrist_min():
     wrist_4.move_min()
