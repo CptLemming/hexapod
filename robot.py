@@ -70,8 +70,8 @@ class Elbow(Joint):
 
 
 class LeftElbow(Elbow):
-    min_rotation = 400
-    max_rotation = 250
+    min_rotation = 250
+    max_rotation = 400
 
 
 class RightElbow(Elbow):
