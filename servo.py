@@ -108,6 +108,12 @@ def right_wrist_max():
     wrist_5.move_max()
     wrist_6.move_max()
 
+def left_forward():
+    hexapod.forward('left')
+
+def right_forward():
+    hexapod.forward('right')
+
 
 def hello_cb():
     tkMessageBox.showinfo('Hello', 'HELLO')
@@ -118,6 +124,12 @@ class App:
         frame.pack()
         self.button = Tkinter.Button(frame, text="Quit", fg="red", command=frame.quit)
         self.button.grid(row=0, column=0)
+        
+        self.left_forward = Tkinter.Button(frame, text="Left Forward", command=left_forward)
+        self.left_forward.grid(row=0, column=2)
+        
+        self.right_forward = Tkinter.Button(frame, text="Right Forward", command=right_forward)
+        self.right_forward.grid(row=0, column=5)
 
         self.shoulder_1_wake = Tkinter.Button(frame, text="Shoulder 1 Min", command=shoulder_1.move_min)
         self.shoulder_1_wake.grid(row=1, column=0)
