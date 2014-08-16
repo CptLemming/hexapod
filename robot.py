@@ -171,18 +171,47 @@ class Hexapod(object):
     def wake_up(self):
         self.arm_1.wake_up()
 
-    def forward(self):
-        self.arm_1.up()
-        time.sleep(self.sleep_time)
-
-        self.arm_1.forward()
-        time.sleep(self.sleep_time)
-
-        self.arm_1.down()
-        time.sleep(self.sleep_time)
-
-        self.arm_1.wake_up()
-        time.sleep(self.sleep_time)
+    def forward(self, side='left'):
+        if side == 'left':
+            self.arm_1.up()
+            self.arm_3.up()
+            self.arm_5.up()
+            time.sleep(self.sleep_time)
+            
+            self.arm_1.forward()
+            self.arm_3.forward()
+            self.arm_5.forward()
+            time.sleep(self.sleep_time)
+            
+            self.arm_1.down()
+            self.arm_3.down()
+            self.arm_5.down()
+            time.sleep(self.sleep_time)
+            
+            self.arm_1.wake_up()
+            self.arm_3.wake_up()
+            self.arm_5.wake_up()
+            time.sleep(self.sleep_time)
+        else:
+            self.arm_2.up()
+            self.arm_4.up()
+            self.arm_6.up()
+            time.sleep(self.sleep_time)
+            
+            self.arm_2.forward()
+            self.arm_4.forward()
+            self.arm_6.forward()
+            time.sleep(self.sleep_time)
+            
+            self.arm_2.down()
+            self.arm_4.down()
+            self.arm_6.down()
+            time.sleep(self.sleep_time)
+            
+            self.arm_2.wake_up()
+            self.arm_4.wake_up()
+            self.arm_6.wake_up()
+            time.sleep(self.sleep_time)
 
     def backward(self):
         self.arm_1.up()
