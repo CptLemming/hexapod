@@ -129,9 +129,9 @@ class App:
         self.elbow_1_sleep = Tkinter.Button(frame, text="Elbow 1 Max", command=elbow_1.move_max)
         self.elbow_1_sleep.grid(row=1, column=3)
 
-        self.wrist_1_wake = Tkinter.Button(frame, text="Wrist 1 Min", command=wrist_1.move_min)
+        self.wrist_1_wake = Tkinter.Button(frame, text="Wrist 1 Down", command=wrist_1.move_min)
         self.wrist_1_wake.grid(row=1, column=4)
-        self.wrist_1_sleep = Tkinter.Button(frame, text="Wrist 1 Max", command=wrist_1.move_max)
+        self.wrist_1_sleep = Tkinter.Button(frame, text="Wrist 1 Up", command=wrist_1.move_max)
         self.wrist_1_sleep.grid(row=1, column=5)
 
         self.shoulder_2_wake = Tkinter.Button(frame, text="Shoulder 2 Min", command=shoulder_2.move_min)
@@ -144,9 +144,9 @@ class App:
         self.elbow_2_sleep = Tkinter.Button(frame, text="Elbow 2 Max", command=elbow_2.move_max)
         self.elbow_2_sleep.grid(row=2, column=3)
 
-        self.wrist_2_wake = Tkinter.Button(frame, text="Wrist 2 Min", command=wrist_2.move_min)
+        self.wrist_2_wake = Tkinter.Button(frame, text="Wrist 2 Down", command=wrist_2.move_min)
         self.wrist_2_wake.grid(row=2, column=4)
-        self.wrist_2_sleep = Tkinter.Button(frame, text="Wrist 2 Max", command=wrist_2.move_max)
+        self.wrist_2_sleep = Tkinter.Button(frame, text="Wrist 2 Up", command=wrist_2.move_max)
         self.wrist_2_sleep.grid(row=2, column=5)
 
         self.shoulder_3_wake = Tkinter.Button(frame, text="Shoulder 3 Min", command=shoulder_3.move_min)
@@ -159,9 +159,9 @@ class App:
         self.elbow_3_sleep = Tkinter.Button(frame, text="Elbow 3 Max", command=elbow_3.move_max)
         self.elbow_3_sleep.grid(row=3, column=3)
 
-        self.wrist_3_wake = Tkinter.Button(frame, text="Wrist 3 Min", command=wrist_3.move_min)
+        self.wrist_3_wake = Tkinter.Button(frame, text="Wrist 3 Down", command=wrist_3.move_min)
         self.wrist_3_wake.grid(row=3, column=4)
-        self.wrist_3_sleep = Tkinter.Button(frame, text="Wrist 3 Max", command=wrist_3.move_max)
+        self.wrist_3_sleep = Tkinter.Button(frame, text="Wrist 3 Up", command=wrist_3.move_max)
         self.wrist_3_sleep.grid(row=3, column=5)
         
         self.left_shoulder_wake = Tkinter.Button(frame, text="Left Shoulder Min", command=left_shoulder_min)
@@ -174,9 +174,9 @@ class App:
         self.left_elbow_sleep = Tkinter.Button(frame, text="Left Elbow Max", command=left_elbow_max)
         self.left_elbow_sleep.grid(row=4, column=3)
 
-        self.left_wrist_wake = Tkinter.Button(frame, text="Left Wrist Min", command=left_wrist_min)
+        self.left_wrist_wake = Tkinter.Button(frame, text="Left Wrist Down", command=left_wrist_min)
         self.left_wrist_wake.grid(row=4, column=4)
-        self.left_wrist_sleep = Tkinter.Button(frame, text="Left Wrist Max", command=left_wrist_max)
+        self.left_wrist_sleep = Tkinter.Button(frame, text="Left Wrist Up", command=left_wrist_max)
         self.left_wrist_sleep.grid(row=4, column=5)
 
         self.shoulder_4_wake = Tkinter.Button(frame, text="Shoulder 4 Min", command=shoulder_4.move_min)
@@ -189,9 +189,9 @@ class App:
         self.elbow_4_sleep = Tkinter.Button(frame, text="Elbow 4 Max", command=elbow_4.move_max)
         self.elbow_4_sleep.grid(row=5, column=3)
 
-        self.wrist_4_wake = Tkinter.Button(frame, text="Wrist 4 Min", command=wrist_4.move_min)
+        self.wrist_4_wake = Tkinter.Button(frame, text="Wrist 4 Down", command=wrist_4.move_min)
         self.wrist_4_wake.grid(row=5, column=4)
-        self.wrist_4_sleep = Tkinter.Button(frame, text="Wrist 4 Max", command=wrist_4.move_max)
+        self.wrist_4_sleep = Tkinter.Button(frame, text="Wrist 4 Up", command=wrist_4.move_max)
         self.wrist_4_sleep.grid(row=5, column=5)
 
         self.shoulder_5_wake = Tkinter.Button(frame, text="Shoulder 5 Min", command=shoulder_5.move_min)
@@ -204,9 +204,9 @@ class App:
         self.elbow_5_sleep = Tkinter.Button(frame, text="Elbow 5 Max", command=elbow_5.move_max)
         self.elbow_5_sleep.grid(row=6, column=3)
 
-        self.wrist_5_wake = Tkinter.Button(frame, text="Wrist 5 Min", command=wrist_5.move_min)
+        self.wrist_5_wake = Tkinter.Button(frame, text="Wrist 5 Down", command=wrist_5.move_min)
         self.wrist_5_wake.grid(row=6, column=4)
-        self.wrist_5_sleep = Tkinter.Button(frame, text="Wrist 5 Max", command=wrist_5.move_max)
+        self.wrist_5_sleep = Tkinter.Button(frame, text="Wrist 5 Up", command=wrist_5.move_max)
         self.wrist_5_sleep.grid(row=6, column=5)
 
         self.shoulder_6_wake = Tkinter.Button(frame, text="Shoulder 6 Min", command=shoulder_6.move_min)
@@ -219,9 +219,9 @@ class App:
         self.elbow_6_sleep = Tkinter.Button(frame, text="Elbow 6 Max", command=elbow_6.move_max)
         self.elbow_6_sleep.grid(row=7, column=3)
 
-        self.wrist_6_wake = Tkinter.Button(frame, text="Wrist 6 Min", command=wrist_6.move_min)
+        self.wrist_6_wake = Tkinter.Button(frame, text="Wrist 6 Down", command=wrist_6.move_min)
         self.wrist_6_wake.grid(row=7, column=4)
-        self.wrist_6_sleep = Tkinter.Button(frame, text="Wrist 6 Max", command=wrist_6.move_max)
+        self.wrist_6_sleep = Tkinter.Button(frame, text="Wrist 6 Up", command=wrist_6.move_max)
         self.wrist_6_sleep.grid(row=7, column=5)
         
         self.right_shoulder_wake = Tkinter.Button(frame, text="Right Shoulder Min", command=right_shoulder_min)
@@ -234,9 +234,9 @@ class App:
         self.right_elbow_sleep = Tkinter.Button(frame, text="Right Elbow Max", command=right_elbow_max)
         self.right_elbow_sleep.grid(row=8, column=3)
 
-        self.right_wrist_wake = Tkinter.Button(frame, text="Right Wrist Min", command=right_wrist_min)
+        self.right_wrist_wake = Tkinter.Button(frame, text="Right Wrist Down", command=right_wrist_min)
         self.right_wrist_wake.grid(row=8, column=4)
-        self.right_wrist_sleep = Tkinter.Button(frame, text="Right Wrist Max", command=right_wrist_max)
+        self.right_wrist_sleep = Tkinter.Button(frame, text="Right Wrist Up", command=right_wrist_max)
         self.right_wrist_sleep.grid(row=8, column=5)
 
 
